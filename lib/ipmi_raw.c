@@ -315,12 +315,21 @@ ipmi_raw_help()
 int
 ipmi_raw_main(struct ipmi_intf * intf, int argc, char ** argv)
 {
+	int i;
+	/*
+	for (i = 0; i < argc; i++)
+	{
+		printf("%s, ",  argv[i]);
+	}
+	printf("\n%d\nThis is the break\n\n", argc);
+	*/
 	struct ipmi_rs * rsp;
 	struct ipmi_rq req;
 	uint8_t netfn, cmd, lun;
 	uint16_t netfn_tmp = 0;
-	int i;
+	//int i;
 	uint8_t data[256];
+
 
 	if (argc == 1 && strncmp(argv[0], "help", 4) == 0) {
 		ipmi_raw_help();
@@ -336,6 +345,7 @@ ipmi_raw_main(struct ipmi_intf * intf, int argc, char ** argv)
 		lprintf(LOG_NOTICE, "Raw command input limit (256 bytes) exceeded");
 		return -1;
 	}
+
 
 	lun = intf->target_lun;
 	netfn_tmp = str2val(argv[0], ipmi_netfn_vals);

@@ -360,7 +360,7 @@ ipmi_main(int argc, char ** argv,
 	signal(SIGINT, ipmi_catch_sigint);
 	memset(kgkey, 0, sizeof(kgkey));
 
-	while ((argflag = getopt(argc, (char **)argv, OPTION_STRING)) != -1)
+	while ((argflag = getopt(argc, (char **)argv, OPTION_STRING)) != -1) // FOUND IT
 	{
 		switch (argflag) {
 		case 'I':

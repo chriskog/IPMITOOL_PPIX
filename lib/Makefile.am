@@ -35,9 +35,9 @@ MAINTAINERCLEANFILES		= Makefile.in
 noinst_LTLIBRARIES		= libipmitool.la
 libipmitool_la_SOURCES	= helper.c ipmi_sdr.c ipmi_sel.c ipmi_sol.c ipmi_pef.c \
 				  ipmi_lanp.c ipmi_fru.c ipmi_chassis.c ipmi_mc.c log.c            \
-				  dimm_spd.c ipmi_sensor.c ipmi_channel.c ipmi_event.c             \
+				  dimm_spd.c ipmi_sensor.c ipmi_channel.c ipmi_chris.c ipmi_event.c             \
 				  ipmi_session.c ipmi_strings.c ipmi_user.c ipmi_raw.c             \
-				  ipmi_oem.c ipmi_isol.c ipmi_sunoem.c ipmi_fwum.c ipmi_picmg.c    \
+				  ipmi_oem.c ipmi_isol.c ipmi_sunoem.c ipmi_fwum.c ipmi_picmg.c ipmi_ppix.c   \
 				  ipmi_main.c ipmi_tsol.c ipmi_firewall.c ipmi_kontronoem.c        \
 				  ipmi_hpmfwupg.c ipmi_sdradd.c ipmi_ekanalyzer.c ipmi_gendev.c    \
 				  ipmi_ime.c ipmi_delloem.c ipmi_dcmi.c hpm2.c ipmi_vita.c \

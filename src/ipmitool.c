@@ -66,6 +66,8 @@
 #include <ipmitool/ipmi_ime.h>
 #include <ipmitool/ipmi_dcmi.h>
 #include <ipmitool/ipmi_vita.h>
+#include <ipmitool/ipmi_chris.h>
+#include <ipmitool/ipmi_ppix.h>
 
 #ifdef HAVE_CONFIG_H
 # include <config.h>
@@ -78,7 +80,6 @@ extern int ipmi_echo_main(struct ipmi_intf * intf, int argc, char ** argv);
 extern int ipmi_set_main(struct ipmi_intf * intf, int argc, char ** argv);
 extern int ipmi_exec_main(struct ipmi_intf * intf, int argc, char ** argv);
 
-
 int csv_output = 0;
 int verbose = 0;
 
@@ -88,6 +89,7 @@ struct ipmi_cmd ipmitool_cmd_list[] = {
 	{ ipmi_rawspd_main,  "spd",     "Print SPD info from remote I2C device" },
 	{ ipmi_lanp_main,    "lan",     "Configure LAN Channels" },
 	{ ipmi_chassis_main, "chassis", "Get chassis status and set power state" },
+	{ ipmi_get_device_id_main,   "deviceid",   "Get Device ID" },
 	{ ipmi_power_main,   "power",   "Shortcut to chassis power commands" },
 	{ ipmi_event_main,   "event",   "Send pre-defined events to MC" },
 	{ ipmi_mc_main,      "mc",      "Management Controller status and global enables" },
@@ -98,6 +100,7 @@ struct ipmi_cmd ipmitool_cmd_list[] = {
 	{ ipmi_gendev_main,  "gendev",  "Read/Write Device associated with Generic Device locators sdr" },
 	{ ipmi_sel_main,     "sel",     "Print System Event Log (SEL)" },
 	{ ipmi_pef_main,     "pef",     "Configure Platform Event Filtering (PEF)" },
+	{ ipmi_ppix_main,      "ppix",    "Discovers TPM and TXT Support Status"},
 	{ ipmi_sol_main,     "sol",     "Configure and connect IPMIv2.0 Serial-over-LAN" },
 	{ ipmi_tsol_main,    "tsol",    "Configure and connect with Tyan IPMIv1.5 Serial-over-LAN" },
 	{ ipmi_isol_main,    "isol",    "Configure IPMIv1.5 Serial-over-LAN" },

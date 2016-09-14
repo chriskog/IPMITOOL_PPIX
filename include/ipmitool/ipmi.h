@@ -77,6 +77,8 @@ struct ipmi_rq {
 		uint8_t target_cmd;
 		uint16_t data_len;
 		uint8_t *data;
+
+
 	} msg;
 };
 
